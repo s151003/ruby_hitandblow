@@ -27,7 +27,7 @@ def hit(input,ans)
 			hit += 1
 		end
 	end
-	print(hit)
+	return hit
 end
 
 def blow(input,ans)
@@ -37,18 +37,18 @@ def blow(input,ans)
 	blow = 0
 	for num in 0..3 do
 		for num1 in 0..3 do 
-			if input[num] != ans[num] then
-				if input[num] == input[num1] then
+			if num != num1 then
+				if input[num] == ans[num1] then
 					blow += 1
-				end		
+				end
 			end
 		end
 	end
-	print(blow)
+	return blow
 end
 	
 p '2453'
 ans = "2453"
 input = gets
-hit(input,ans)
-blow(input,ans)
+print hit(input,ans)
+print blow(input,ans)
