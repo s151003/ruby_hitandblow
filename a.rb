@@ -11,19 +11,44 @@ def genAns
 		num = num.to_s
 		num = '000' + num
 	end
-	return num
+	return num.to_s
 end
-ans = genAns().to_s
+def toArray(input)
+	return input.split(/\s*/)
+end
 
-def judge(input,ans)
+def hit(input,ans)
 	input = input.split(/\s*/)
 	ans = ans.split(/\s*/)
-	#hit判定
+
 	hit = 0
 	for num in 0..3 do
 		if input[num] == ans[num] then
 			hit += 1
 		end
 	end
+	print(hit)
 end
-judge("2453",ans)
+
+def blow(input,ans)
+	input = input.split(/\s*/)
+	ans = ans.split(/\s*/)
+	
+	blow = 0
+	for num in 0..3 do
+		for num1 in 0..3 do 
+			if input[num] != ans[num] then
+				if input[num] == input[num1] then
+					blow += 1
+				end		
+			end
+		end
+	end
+	print(blow)
+end
+	
+p '2453'
+ans = "2453"
+input = gets
+hit(input,ans)
+blow(input,ans)
