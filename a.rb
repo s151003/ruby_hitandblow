@@ -30,7 +30,7 @@ def hit(input,ans)
 	return hit
 end
 
-def blow(input,ans)
+def blow(input,hit,ans)
 	input = input.split(/\s*/)
 	ans = ans.split(/\s*/)
 	
@@ -44,11 +44,13 @@ def blow(input,ans)
 			end
 		end
 	end
-	return blow
+	return blow-hit
 end
 	
 p '2453'
 ans = "2453"
-input = gets
-print hit(input,ans)
-print blow(input,ans)
+input = '1154'
+hit = hit(input,ans)
+print hit
+print "\n"
+print blow(input,hit,ans)
